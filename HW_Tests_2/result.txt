@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.4, pytest-7.4.0, pluggy-1.0.0
+rootdir: /Users/coverkincel/Documents/Совбак 2 курс/Авито/Avito_homework_Tests/HW_Tests_2
+plugins: anyio-3.5.0
+collected 6 items
+
+test_morse.py .F..F.                                                     [100%]
+
+=================================== FAILURES ===================================
+___________ test_decode[-- --- .-. ... .  -.-. --- -.. .-MORSE CODE] ___________
+
+test_input = '-- --- .-. ... .  -.-. --- -.. .', expected = 'MORSE CODE'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        (".... . .-.. .-.. ---", "HELLO"),
+        ("-- --- .-. ... .  -.-. --- -.. .", "MORSE CODE"),
+        ("-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- .---- ----.",
+         "MAI-PYTHON-2019")
+    ])
+    def test_decode(test_input, expected):
+>       assert decode(test_input) == expected
+E       AssertionError: assert 'MORSECODE' == 'MORSE CODE'
+E         - MORSE CODE
+E         ?      -
+E         + MORSECODE
+
+test_morse.py:14: AssertionError
+___________ test_encode[MORSE CODE--- --- .-. ... .  -.-. --- -.. .] ___________
+
+test_input = 'MORSE CODE', expected = '-- --- .-. ... .  -.-. --- -.. .'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("HELLO", ".... . .-.. .-.. ---"),
+        ("MORSE CODE", "-- --- .-. ... .  -.-. --- -.. ."),
+        ("MAI-PYTHON-2019",
+         "-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- .---- ----.")
+    ])
+    def test_encode(test_input, expected):
+>       assert encode(test_input) == expected
+E       AssertionError: assert '-- --- .-. .....-. --- -.. .' == '-- --- .-. .....-. --- -.. .'
+E         - -- --- .-. ... .  -.-. --- -.. .
+E         + -- --- .-. ... .   -.-. --- -.. .
+E         ?                 +
+
+test_morse.py:26: AssertionError
+=========================== short test summary info ============================
+FAILED test_morse.py::test_decode[-- --- .-. ... .  -.-. --- -.. .-MORSE CODE]
+FAILED test_morse.py::test_encode[MORSE CODE--- --- .-. ... .  -.-. --- -.. .]
+========================= 2 failed, 4 passed in 0.03s ==========================

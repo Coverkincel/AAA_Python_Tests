@@ -1,0 +1,31 @@
+Установка зависимостей:
+$ pip install -r requirements.txt
+Requirement already satisfied: mock in /Users/coverkincel/anaconda3/lib/python3.11/site-packages (from -r requirements.txt (line 1)) (5.1.0)
+Requirement already satisfied: coverage in /Users/coverkincel/anaconda3/lib/python3.11/site-packages (from -r requirements.txt (line 2)) (7.3.2)
+
+Запуск тестов:
+$ coverage run what_is_year_now.py
+E..
+======================================================================
+ERROR: test_format_dmy (__main__.TestWhatIsYearNow.test_format_dmy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/coverkincel/anaconda3/lib/python3.11/unittest/mock.py", line 1375, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/coverkincel/Documents/Совбак 2 курс/Авито/Avito_homework_testing/HW_Tests_5/what_is_year_now.py", line 52, in test_format_dmy
+    self.assertEqual(what_is_year_now(), 2023)
+                     ^^^^^^^^^^^^^^^^^^
+  File "/Users/coverkincel/Documents/Совбак 2 курс/Авито/Avito_homework_testing/HW_Tests_5/what_is_year_now.py", line 34, in what_is_year_now
+    return int(year_str)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '11.2'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+FAILED (errors=1)
+
+Генерация отчета о покрытии:
+$ coverage html
+Wrote HTML report to htmlcov/index.html
