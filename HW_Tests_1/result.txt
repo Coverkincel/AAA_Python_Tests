@@ -1,0 +1,55 @@
+Trying:
+    decode('... --- ...')
+Expecting:
+    'SOS'
+ok
+Trying:
+    decode('.... . .-.. .-.. ---  .-- --- .-. .-.. -..')
+Expecting:
+    'HELLO WORLD'
+**********************************************************************
+File "/Users/coverkincel/Documents/Совбак 2 курс/Авито/Avito_homework_3/HW_Tests_1/morse.py", line 58, in morse.decode
+Failed example:
+    decode('.... . .-.. .-.. ---  .-- --- .-. .-.. -..')
+Expected:
+    'HELLO WORLD'
+Got:
+    'HELLOWORLD'
+Trying:
+    decode('-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- .---- ----.')
+Expecting:
+    'MAI-PYTHON-2019'
+ok
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('HELLO WORLD')
+Expecting:
+    '.... . .-.. .-.. ---  .-- --- .-. .-.. -..'
+**********************************************************************
+File "/Users/coverkincel/Documents/Совбак 2 курс/Авито/Avito_homework_3/HW_Tests_1/morse.py", line 35, in morse.encode
+Failed example:
+    encode('HELLO WORLD')
+Expected:
+    '.... . .-.. .-.. ---  .-- --- .-. .-.. -..'
+Got:
+    '.... . .-.. .-.. ---   .-- --- .-. .-.. -..'
+Trying:
+    encode('!')
+Expecting:
+    Traceback (most recent call last):
+    ...
+    KeyError: '!'
+ok
+1 items had no tests:
+    morse
+**********************************************************************
+2 items had failures:
+   1 of   3 in morse.decode
+   1 of   3 in morse.encode
+6 tests in 3 items.
+4 passed and 2 failed.
+***Test Failed*** 2 failures.
